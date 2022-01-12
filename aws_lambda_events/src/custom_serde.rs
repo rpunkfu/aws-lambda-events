@@ -148,7 +148,7 @@ pub(crate) fn serialize_duration_seconds<S>(
 where
     S: Serializer,
 {
-    let seconds = duration.num_seconds();
+    let seconds = duration.whole_seconds();
 
     serializer.serialize_i64(seconds)
 }
@@ -168,7 +168,7 @@ pub(crate) fn serialize_duration_minutes<S>(
 where
     S: Serializer,
 {
-    let minutes = duration.num_minutes();
+    let minutes = duration.whole_minutes();
 
     serializer.serialize_i64(minutes)
 }
